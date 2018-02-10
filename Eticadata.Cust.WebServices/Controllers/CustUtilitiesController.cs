@@ -1,4 +1,5 @@
 ﻿using Eticadata.Cust.WebServices.Models.Utilities;
+using Eticadata.ERP;
 using Eticadata.ERP.EtiEnums;
 using Eticadata.Views.Reports;
 using System;
@@ -82,7 +83,6 @@ namespace Eticadata.Cust.WebServices.Controllers
         {
             try
             {
-
                 EtiquetasPrint objLabelsPrint = new EtiquetasPrint();
                 objLabelsPrint.InicializaEmissaoEtiqsExtended(Eti.Aplicacao, printLabelInput.ToArray(), printLabelInput.Label);
 
