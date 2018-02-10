@@ -1,0 +1,6 @@
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\.build\Eticadata.Cust.WebServices.dll.config
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\.build\Eticadata.Cust.WebServices.dll
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\.build\Eticadata.Cust.WebServices.pdb
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\obj\Debug\Eticadata.Cust.WebServices.csprojResolveAssemblyReference.cache
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\obj\Debug\Eticadata.Cust.WebServices.dll
+D:\eticadata-cust.visualstudio.com\Eticadata Customization Samples\Eticadata.Cust.WebServices\obj\Debug\Eticadata.Cust.WebServices.pdb
