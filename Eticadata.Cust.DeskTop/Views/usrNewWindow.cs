@@ -156,9 +156,9 @@ namespace Eticadata.Cust.DeskTop.Views
                 columnPosition = 1,
                 linePosition = 1,
                 Copies = 1,
-                EmissionBy = ERP.EtiEnums.EtiqTpEmissao.MovStocks,
+                EmissionBy = ERP.EtiEnums.EtiqTpEmissao.NumFixoCopias,
                 bytTpEmissaoPorDocOuLinha = Etiquetas.TpEmissaoPorDocOuLin.PorLinha,
-                copiesType = Etiquetas.TpNumCopias.Fixo,
+                copiesType = Etiquetas.TpNumCopias.Quant,
                 lngPromInic = 0,
                 lngPromFinal = 0,
                 strFiltroArmazens = "",
@@ -169,17 +169,27 @@ namespace Eticadata.Cust.DeskTop.Views
                 measureType = ERP.EtiEnums.TpUnidade.STK,
                 blnFiltroComTpNivel = false,
                 chkUsaQtdMedidas = false,
-                strFiltroWhere = "",
-                strFiltroOrderBy = "Tbl_Gce_Artigos.strCodigo",
-                strTabDocCab = "Mov_Stock_Cab",
-                strTabDocLin = "Mov_Stock_Lin",
-                labelFileName = "Label.eti"
+                strFiltroWhere = " WHERE Tbl_Gce_Artigos.strCodigo IN ('RES_COBRE2')",
+                strFiltroOrderBy = "",
+                strTabDocCab = "",
+                strTabDocLin = "",
+                labelFileName = "Labels\\Items\\Label.eti",
+                Graphic = this.CreateGraphics()
             };
 
             string[] param = printLabelInput.ToArray();
             myWorkItem.RootWorkItem.State[GlobalState.PosicaoSingular] = printLabelInput.Label;
             myWorkItem.RootWorkItem.State[GlobalState.Posicao] = param;
-            myWorkItem.Commands[CommandsGceUtil.EtiqImprimir].Execute();
+
+            if (printLabelInput.toPrint)
+            {
+                myWorkItem.Commands[CommandsGceUtil.EtiqImprimir].Execute();
+            } else
+            {
+                myWorkItem.Commands[CommandsGceUtil.EtiqEmissao].Execute();
+            }
+
+            
         }
     }
 }

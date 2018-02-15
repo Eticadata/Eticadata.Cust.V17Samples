@@ -69,16 +69,15 @@ namespace Eticadata.Cust.DeskTop.Models
         private Etiqueta myLabel;
         public Etiqueta Label { get { return myLabel; } }
 
-        private Graphics myGrafic;
-        public Graphics Grafic { get { return myGrafic; } }
+        private Graphics myGraphic;
+        public Graphics Graphic { get { return myGraphic; } set { myGraphic = value; } }
 
         internal string[] ToArray()
         {
             try
             {
                 myLabels = etiApp.Tabelas.get_Etiquetas(Convert.ToByte(bytLableType));
-                myLabels.GetNew();
-                myLabel = myLabels.FindEtiqueta(bytLableType, 0, labelFileName, ref myGrafic);
+                myLabel = myLabels.FindEtiqueta(bytLableType, 0, labelFileName, ref myGraphic);
 
                 string strErrorDescription = string.Empty;
                 string strCamposSelect = myLabels.GetCamposSelectToQtd(EmissionBy, bytTpEmissaoPorDocOuLinha, copiesType, chkUsaQtdMedidas, measureType, blnFiltroComTpNivel, strTabDocLin);
