@@ -5,6 +5,7 @@ using Eticadata.Views.Reports;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Http;
 using static Eticadata.ERP.Etiquetas;
@@ -20,6 +21,7 @@ namespace Eticadata.Cust.WebServices.Controllers
             try
             {
                 Eticadata.Views.Reports.ReportsGcePOS report = new Views.Reports.ReportsGcePOS(Eti.Aplicacao, "", ERP.EtiEnums.ExportWebFormat.PDF);
+                EtiAplicacao etiapp = new EtiAplicacao();
 
                 byte[] reportBytes;
 
@@ -49,46 +51,6 @@ namespace Eticadata.Cust.WebServices.Controllers
                 return Ok(reportBytes);
             }
             catch(Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-
-        //{"bytLableType" : "0",
-        //	"docType" : "-1",
-        //	"bytTpEmissaoPorDocOuLinha" : "",
-        //	"copiesType" : "0",
-        //	"columnPosition" : "0",
-        //	"measureType" : "2",
-        //	"blnFiltroComTpNivel" : "0",
-        //	"linePosition" : "0",
-        //	"Copies" : "1",
-        //	"chkUsaQtdMedidas" : "0",
-        //	"lngPromInic" : "",
-        //	"lngPromFinal" : "",
-        //	"DataInicPreco" : "",
-        //	"DataFimPreco" : "",
-        //	"strFiltroWhere" : "",
-        //	"strFiltroOrderBy" : "",
-        //	"strFiltroArmazens" : "",
-        //	"strFiltroArtigos" : "",
-        //	"strFiltroPromocoes" : "",
-        //	"strTabDocCab" : "",
-        //	"strTabDocLin" : "",
-        //	"labelFileName" : "Label.eti"}
-        [HttpPost]
-        [Authorize]
-        public IHttpActionResult PrintLabels(PrintLabelInput printLabelInput)
-        {
-            try
-            {
-                EtiquetasPrint objLabelsPrint = new EtiquetasPrint();
-                objLabelsPrint.InicializaEmissaoEtiqsExtended(Eti.Aplicacao, printLabelInput.ToArray(), printLabelInput.Label);
-
-                return Ok();
-            }
-            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }

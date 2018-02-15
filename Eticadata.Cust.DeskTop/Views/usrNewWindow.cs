@@ -146,5 +146,40 @@ namespace Eticadata.Cust.DeskTop.Views
             //Através de um webservice
             var res3 =  GetEntitiesCategoryByWebservice();
         }
+
+        private void btnPrintLabel_Click(object sender, EventArgs e)
+        {
+            PrintLabelInput printLabelInput = new PrintLabelInput(myEtiApp)
+            {
+                bytLableType = ERP.EtiEnums.TpEtiqueta.Artigos,
+                toPrint = false,
+                columnPosition = 1,
+                linePosition = 1,
+                Copies = 1,
+                EmissionBy = ERP.EtiEnums.EtiqTpEmissao.MovStocks,
+                bytTpEmissaoPorDocOuLinha = Etiquetas.TpEmissaoPorDocOuLin.PorLinha,
+                copiesType = Etiquetas.TpNumCopias.Fixo,
+                lngPromInic = 0,
+                lngPromFinal = 0,
+                strFiltroArmazens = "",
+                strFiltroArtigos = "",
+                DataInicPreco = DateTime.MinValue,
+                DataFimPreco = DateTime.MinValue,
+                strFiltroPromocoes = "",
+                measureType = ERP.EtiEnums.TpUnidade.STK,
+                blnFiltroComTpNivel = false,
+                chkUsaQtdMedidas = false,
+                strFiltroWhere = "",
+                strFiltroOrderBy = "Tbl_Gce_Artigos.strCodigo",
+                strTabDocCab = "Mov_Stock_Cab",
+                strTabDocLin = "Mov_Stock_Lin",
+                labelFileName = "Label.eti"
+            };
+
+            string[] param = printLabelInput.ToArray();
+            myWorkItem.RootWorkItem.State[GlobalState.PosicaoSingular] = printLabelInput.Label;
+            myWorkItem.RootWorkItem.State[GlobalState.Posicao] = param;
+            myWorkItem.Commands[CommandsGceUtil.EtiqImprimir].Execute();
+        }
     }
 }

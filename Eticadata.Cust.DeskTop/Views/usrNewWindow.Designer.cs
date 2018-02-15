@@ -33,6 +33,7 @@
             this.btnExit = new System.Windows.Forms.ToolStripButton();
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnEntitiesCategory = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintLabel = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +43,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnExit,
             this.btnSave,
-            this.btnEntitiesCategory});
+            this.btnEntitiesCategory,
+            this.btnPrintLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 283);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(487, 43);
@@ -87,6 +89,18 @@
             this.btnEntitiesCategory.Text = "Categorias Entidade";
             this.btnEntitiesCategory.Click += new System.EventHandler(this.btnEntitiesCategory_Click);
             // 
+            // btnPrintLabel
+            // 
+            this.btnPrintLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnPrintLabel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrintLabel.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintLabel.Image")));
+            this.btnPrintLabel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnPrintLabel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintLabel.Name = "btnPrintLabel";
+            this.btnPrintLabel.Size = new System.Drawing.Size(23, 40);
+            this.btnPrintLabel.Text = "Print Label";
+            this.btnPrintLabel.Click += new System.EventHandler(this.btnPrintLabel_Click);
+            // 
             // NewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,5 +123,6 @@
         private System.Windows.Forms.ToolStripButton btnExit;
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnEntitiesCategory;
+        private System.Windows.Forms.ToolStripButton btnPrintLabel;
     }
 }

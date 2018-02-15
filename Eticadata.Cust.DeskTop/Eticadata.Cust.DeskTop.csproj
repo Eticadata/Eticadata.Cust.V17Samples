@@ -20,7 +20,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>.build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -107,6 +107,7 @@
     <Compile Include="Helpers\Rules.cs" />
     <Compile Include="Init.cs" />
     <Compile Include="Models\EntitiesCategory.cs" />
+    <Compile Include="Models\PrintLabelInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\usrCustomers.cs">
       <SubType>UserControl</SubType>

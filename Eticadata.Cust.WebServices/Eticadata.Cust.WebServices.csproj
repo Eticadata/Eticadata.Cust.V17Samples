@@ -209,7 +209,6 @@
     <Compile Include="Models\Sales\mySale.cs" />
     <Compile Include="Models\Settlements\mySettlement.cs" />
     <Compile Include="Models\Utilities\PrintInput.cs" />
-    <Compile Include="Models\Utilities\PrintLabelInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

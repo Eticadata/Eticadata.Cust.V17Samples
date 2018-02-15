@@ -7,13 +7,19 @@ using System.Linq;
 using System.Web;
 using static Eticadata.ERP.Etiquetas;
 
-namespace Eticadata.Cust.WebServices.Models.Utilities
+namespace Eticadata.Cust.DeskTop.Models
 {
     public class PrintLabelInput
     {
+        private EtiAplicacao etiApp;
+        public PrintLabelInput(EtiAplicacao etiApp)
+        {
+            this.etiApp = etiApp;
+        }
+
         public TpEtiqueta bytLableType { get; set; }
 
-        public EtiqTpEmissao docType { get; set; }
+        public EtiqTpEmissao EmissionBy { get; set; }
 
         public TpEmissaoPorDocOuLin bytTpEmissaoPorDocOuLinha { get; set; }
 
@@ -33,13 +39,13 @@ namespace Eticadata.Cust.WebServices.Models.Utilities
 
         public bool chkUsaQtdMedidas { get; set; }
 
-        public DateTime lngPromInic { get; set; }
+        public long lngPromInic { get; set; }
 
-        public DateTime lngPromFinal { get; set; }
+        public long lngPromFinal { get; set; }
 
         public DateTime DataInicPreco { get; set; }
 
-        DateTime DataFimPreco { get; set; }
+        public DateTime DataFimPreco { get; set; }
 
         public string strFiltroWhere { get; set; }
 
@@ -70,13 +76,12 @@ namespace Eticadata.Cust.WebServices.Models.Utilities
         {
             try
             {
-                myLabels = Eti.Aplicacao.Tabelas.get_Etiquetas(Convert.ToByte(bytLableType));
+                myLabels = etiApp.Tabelas.get_Etiquetas(Convert.ToByte(bytLableType));
                 myLabels.GetNew();
-
                 myLabel = myLabels.FindEtiqueta(bytLableType, 0, labelFileName, ref myGrafic);
 
                 string strErrorDescription = string.Empty;
-                string strCamposSelect = myLabels.GetCamposSelectToQtd(docType, bytTpEmissaoPorDocOuLinha, copiesType, chkUsaQtdMedidas, measureType, blnFiltroComTpNivel, strTabDocLin);
+                string strCamposSelect = myLabels.GetCamposSelectToQtd(EmissionBy, bytTpEmissaoPorDocOuLinha, copiesType, chkUsaQtdMedidas, measureType, blnFiltroComTpNivel, strTabDocLin);
                 string strFiltroLeftJoin = myLabels.GetFiltroLeftJoin(strCamposSelect + " " + strFiltroWhere + " " + strFiltroOrderBy, strTabDocCab, strTabDocLin, ref strErrorDescription);
 
                 if (!string.IsNullOrEmpty(strErrorDescription))
@@ -85,27 +90,27 @@ namespace Eticadata.Cust.WebServices.Models.Utilities
                 }
 
                 string[] res = new string[]{
-                                                Convert.ToInt32(bytLableType).ToString(),
-                                                Convert.ToInt32(toPrint).ToString(),
-                                                Convert.ToInt32(columnPosition).ToString(),
-                                                Convert.ToInt32(linePosition).ToString(),
-                                                Convert.ToInt32(Copies).ToString(),
-                                                Convert.ToInt32(docType).ToString(),
-                                                Convert.ToInt32(bytTpEmissaoPorDocOuLinha).ToString(),
-                                                Convert.ToInt32(copiesType).ToString(),
-                                                strCamposSelect,
-                                                strFiltroLeftJoin,
-                                                strFiltroWhere,
-                                                strFiltroOrderBy,
-                                                lngPromInic.Ticks.ToString(),
-                                                lngPromFinal.Ticks.ToString(),
-                                                "0",
-                                                strFiltroArmazens,
-                                                strFiltroArtigos,
-                                                DataInicPreco.ToShortDateString(),
-                                                DataFimPreco.ToShortDateString(),
-                                                strFiltroPromocoes
-                                            };
+                            Convert.ToInt32(bytLableType).ToString(),
+                            Convert.ToInt32(toPrint).ToString(),
+                            Convert.ToInt32(columnPosition).ToString(),
+                            Convert.ToInt32(linePosition).ToString(),
+                            Convert.ToInt32(Copies).ToString(),
+                            Convert.ToInt32(EmissionBy).ToString(),
+                            Convert.ToInt32(bytTpEmissaoPorDocOuLinha).ToString(),
+                            Convert.ToInt32(copiesType).ToString(),
+                            strCamposSelect,
+                            strFiltroLeftJoin,
+                            strFiltroWhere,
+                            strFiltroOrderBy,
+                            lngPromInic.ToString(),
+                            lngPromFinal.ToString(),
+                            "0",
+                            strFiltroArmazens,
+                            strFiltroArtigos,
+                            DataInicPreco.ToShortDateString(),
+                            DataFimPreco.ToShortDateString(),
+                            strFiltroPromocoes
+                        };
 
                 return res;
 
