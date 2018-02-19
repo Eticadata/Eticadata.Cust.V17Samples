@@ -1,3 +1,51 @@
+# Código de Conduta do Colaborador
+
+## O Nosso Compromisso
+
+Com o interesse de fomentar uma comunidade aberta e acolhedora, nós, como colaboradores e administradores, comprometemo-nos a fazer da participação neste projeto uma experiência livre de assédio para todos, independentemente da idade, estatura, deficiência, etnia, identidade e expressão de género, nível de experiência, nacionalidade, aparência pessoal, raça, religião, identidade ou orientação sexual.
+
+## Os Nossos Padrões
+
+Exemplos de comportamentos que contribuem para criar um ambiente positivo incluem:
+
+* Usar linguagem acolhedora e inclusiva
+* Respeitar pontos de vista e experiências diferentes
+* Aceitar graciosamente críticas construtivas
+* Focar no que é melhor para a comunidade
+* Mostrar empatia com os outros membros da comunidade
+
+Exemplos de comportamentos inaceitáveis por parte dos participantes incluem:
+
+* Usar linguagem ou imagens de conotação sexual e atenção ou avanços sexuais indesejados
+* Provocar alguém ou usar comentários insultuosos e/ou depreciativos e ataques pessoais ou políticos 
+* Assédio público ou privado
+* Publicar informação pessoal de alguém, como endereço físico ou eletrónico, sem permissão explícita
+* Qualquer outro comportamento que possa ser razoavelmente considerado inapropriado num ambiente profissional
+
+## As Nossas Responsabilidades
+
+Os administradores do projeto são responsáveis por esclarecer os padrões de comportamento e deverão tomar medidas corretivas apropriadas e justas em resposta a qualquer tipo de comportamento inaceitável.
+
+Os administradores do projeto têm o direito e a responsabilidade de remover, editar ou rejeitar comentários, propostas de alteração, código, edições na wiki, erros ou outras formas de contribuição que não estejam de acordo com este Código de Conduta, bem como banir temporariamente ou permanentemente qualquer colaborador por qualquer outro comportamento que considerem inapropriado, ameaçador, ofensivo ou prejudicial.
+
+## Âmbito
+
+Este Código de Conduta aplica-se tanto dentro dos espaços do projeto como em espaços públicos onde alguém represente o projeto ou a sua comunidade. Exemplos de representação do projeto ou comunidade incluem usar um endereço de email oficial do projeto, publicar através de uma conta oficial de redes sociais, ou agir como representante designado num evento online ou offline. A representação de um projeto pode ser ainda definida e esclarecida pelos administradores do projeto.
+
+## Aplicação
+
+Situações de abuso, perseguição, ou qualquer outro tipo de comportamento inaceitável, podem ser comunicados à equipa responsável do projeto em eticadata@eticadata.com. Todas as queixas serão analisadas e investigadas, e resultarão numa resposta considerada apropriada às circunstâncias. A equipa do projeto é obrigada a manter a confidencialidade da autoria da denúncia. Mais detalhes sobre políticas de aplicação específicas podem ser publicados separadamente.
+
+Administradores do projeto que não sigam ou não façam cumprir o Código de Conduta de boa-fé podem enfrentar repercussões temporárias ou permanentes determinadas por outros membros da liderança do projeto.
+
+## Atribuição
+
+Este Código de Conduta é adaptado do  [Contributor Covenant][homepage], versão 1.4, disponível em [http://contributor-covenant.org/version/1/4][version]
+
+[homepage]: http://contributor-covenant.org
+[version]: http://contributor-covenant.org/version/1/4/
+
+-------------------------------------------------------------------------------
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
