@@ -95,7 +95,7 @@
     Este webservice libertará o licenciamento utilizado durante as operações realizadas no ambito da sessão, e terminará a sessão.
 
     ```
-    POST    http://localhost/ERPV17/api/Shell/OpenCompany/
+    POST    http://localhost/ERPV17/api/Shell/LogoutUser/
             Content-Type: application/json; charset=UTF-8
     ```
 
