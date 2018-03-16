@@ -147,11 +147,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)Eticadata.Cust.*.pdb" "C:\ETICADATA\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
-xcopy "$(TargetDir)Eticadata.Cust.*.dll" "C:\ETICADATA\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
+    <PostBuildEvent>xcopy "$(TargetDir)Eticadata.Cust.*.pdb" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
+xcopy "$(TargetDir)Eticadata.Cust.*.dll" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
 
 :Devido ao webservice
-xcopy "$(TargetDir)Eticadata.Cust.*.dll" "C:\ETICADATA\Edata.Cust\Projects\V17\ERP.Build\Web.00.Site\Eticadata.Web\bin" /E /Y</PostBuildEvent>
+xcopy "$(TargetDir)Eticadata.Cust.*.dll" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Web.00.Site\Eticadata.Web\bin" /E /Y</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

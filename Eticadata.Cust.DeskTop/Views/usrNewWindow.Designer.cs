@@ -34,6 +34,7 @@
             this.btnSave = new System.Windows.Forms.ToolStripButton();
             this.btnEntitiesCategory = new System.Windows.Forms.ToolStripButton();
             this.btnPrintLabel = new System.Windows.Forms.ToolStripButton();
+            this.btnPrintLabelSalesDoc = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +45,8 @@
             this.btnExit,
             this.btnSave,
             this.btnEntitiesCategory,
-            this.btnPrintLabel});
+            this.btnPrintLabel,
+            this.btnPrintLabelSalesDoc});
             this.toolStrip1.Location = new System.Drawing.Point(0, 283);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(487, 43);
@@ -101,6 +103,18 @@
             this.btnPrintLabel.Text = "Print Label";
             this.btnPrintLabel.Click += new System.EventHandler(this.btnPrintLabel_Click);
             // 
+            // btnPrintLabelSalesDoc
+            // 
+            this.btnPrintLabelSalesDoc.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnPrintLabelSalesDoc.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnPrintLabelSalesDoc.Image = ((System.Drawing.Image)(resources.GetObject("btnPrintLabelSalesDoc.Image")));
+            this.btnPrintLabelSalesDoc.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnPrintLabelSalesDoc.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnPrintLabelSalesDoc.Name = "btnPrintLabelSalesDoc";
+            this.btnPrintLabelSalesDoc.Size = new System.Drawing.Size(23, 40);
+            this.btnPrintLabelSalesDoc.Text = "Print Label";
+            this.btnPrintLabelSalesDoc.Click += new System.EventHandler(this.btnPrintFromSalesDocLabel_Click);
+            // 
             // NewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,5 +138,6 @@
         private System.Windows.Forms.ToolStripButton btnSave;
         private System.Windows.Forms.ToolStripButton btnEntitiesCategory;
         private System.Windows.Forms.ToolStripButton btnPrintLabel;
+        private System.Windows.Forms.ToolStripButton btnPrintLabelSalesDoc;
     }
 }

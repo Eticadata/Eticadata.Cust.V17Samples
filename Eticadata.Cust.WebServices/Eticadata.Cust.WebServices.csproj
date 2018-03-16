@@ -189,6 +189,7 @@
   <ItemGroup>
     <Compile Include="Controllers\CustomerTAController.cs" />
     <Compile Include="Controllers\EntitiesCategoryTAController.cs" />
+    <Compile Include="Controllers\PurchasesController.cs" />
     <Compile Include="Controllers\OrdersSatisfactionTAController.cs" />
     <Compile Include="Controllers\RepairOrdersTAController.cs" />
     <Compile Include="Controllers\SalesTAController.cs" />
@@ -205,6 +206,7 @@
     <Compile Include="Models\EntitiesCategory\EntitiesCategory.cs" />
     <Compile Include="Models\Items\myItem.cs" />
     <Compile Include="Models\OrdersSatisfaction\MyOrderSatisfaction.cs" />
+    <Compile Include="Models\Purchases\myPurchase.cs" />
     <Compile Include="Models\RepairOrders\myRepairOrder.cs" />
     <Compile Include="Models\Sales\mySale.cs" />
     <Compile Include="Models\Settlements\mySettlement.cs" />

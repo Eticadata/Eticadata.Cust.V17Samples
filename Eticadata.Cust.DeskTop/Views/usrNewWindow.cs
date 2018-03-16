@@ -188,8 +188,50 @@ namespace Eticadata.Cust.DeskTop.Views
             {
                 myWorkItem.Commands[CommandsGceUtil.EtiqEmissao].Execute();
             }
+        }
 
-            
+        private void btnPrintFromSalesDocLabel_Click(object sender, EventArgs e)
+        {
+            PrintLabelInput printLabelInput = new PrintLabelInput(myEtiApp)
+            {
+                bytLableType = ERP.EtiEnums.TpEtiqueta.Artigos,
+                toPrint = false,
+                columnPosition = 1,
+                linePosition = 1,
+                Copies = 1,
+                EmissionBy = ERP.EtiEnums.EtiqTpEmissao.DocVendas,
+                bytTpEmissaoPorDocOuLinha = Etiquetas.TpEmissaoPorDocOuLin.PorLinha,
+                copiesType = Etiquetas.TpNumCopias.Fixo,
+                lngPromInic = 0,
+                lngPromFinal = 0,
+                strFiltroArmazens = "",
+                strFiltroArtigos = "",
+                DataInicPreco = DateTime.MinValue,
+                DataFimPreco = DateTime.MinValue,
+                strFiltroPromocoes = "",
+                measureType = ERP.EtiEnums.TpUnidade.VND,
+                blnFiltroComTpNivel = false,
+                chkUsaQtdMedidas = false,
+                strFiltroWhere = " WHERE Mov_Venda_Cab.intNumero IN (93)",
+                strFiltroOrderBy = "",
+                strTabDocCab = "Mov_Venda_Cab",
+                strTabDocLin = "Mov_Venda_Lin",
+                labelFileName = "Labels\\Items\\LabelSalesDoc.eti",
+                Graphic = this.CreateGraphics()
+            };
+
+            string[] param = printLabelInput.ToArray();
+            myWorkItem.RootWorkItem.State[GlobalState.PosicaoSingular] = printLabelInput.Label;
+            myWorkItem.RootWorkItem.State[GlobalState.Posicao] = param;
+
+            if (printLabelInput.toPrint)
+            {
+                myWorkItem.Commands[CommandsGceUtil.EtiqImprimir].Execute();
+            }
+            else
+            {
+                myWorkItem.Commands[CommandsGceUtil.EtiqEmissao].Execute();
+            }
         }
     }
 }
