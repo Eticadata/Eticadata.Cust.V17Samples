@@ -1,5 +1,5 @@
 # eticadata ERP
-## Repositório de exemlos de customização
+## Repositório de exemplos de customização
 1. Exemplo de __User Controls__
 
     O projeto `Eticadata.Cust.Desktop` disponibiliza exemplos de como adicionar um novo user control ao ERP.
