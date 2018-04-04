@@ -11,40 +11,7 @@ using System.Web.Http;
 namespace Eticadata.Cust.WebServices.Controllers
 {
     public class SalesTAController : ApiController
-    {
-        public mySale GetNewSale()
-        {
-            //Apenas com uma linha
-            SalesLine line = new SalesLine()
-            {
-                LineNumber = 1,
-                ItemCode = "ART1",
-                ItemDescription = "Artigo cust",
-                Quantity = 3,
-                VATTax = 23,
-                UnitPriceExcludedVAT = 100,
-                Discount1 = 1,
-                Discount2 = 2,
-                Discount3 = 3,
-                DiscountValue = 4,
-            };
-
-            mySale mySale = new mySale()
-            {
-                FiscalYear = "2018",
-                SectionCode = "1",
-                DocTypeAbbrev = "FAT",
-                EntityCode = 1,
-                Date = DateTime.Now,
-                ExpirationDate = DateTime.Now,
-                CurrencyCode = "EUR",
-                Lines = new List<SalesLine>() { line },
-                GetReportBytes = true,
-            };
-
-            return mySale;
-        }
-
+    {        
         [HttpPost]
         [Authorize]        
         public IHttpActionResult GenerateSalesDoc([FromBody] Models.mySale pSale)
@@ -67,9 +34,7 @@ namespace Eticadata.Cust.WebServices.Controllers
             var result = new DocumentResult();
 
             try
-            {                
-                //pSale = GetNewSale();
-
+            {                   
                 mySale = Eti.Aplicacao.Movimentos.MovVendas.GetNew(pSale.DocTypeAbbrev, pSale.SectionCode);
                 mySale.Cabecalho.CodExercicio = pSale.FiscalYear;
 
@@ -124,6 +89,27 @@ namespace Eticadata.Cust.WebServices.Controllers
 
                     saleLine.DescontoValorLinha = line.DiscountValue;
                     mySale.AlteraDesconto(4, numberLine, saleLine.DescontoValorLinha);
+                }
+
+
+                //redefinir meios de pagamento
+                var linePayMovType = 1;
+
+                if (mySale.CountLinPag > 0) mySale.DelLinhasPag();
+
+                foreach (SalePayment line in pSale.LinesPayment)
+                {
+                    var movType = line.PayMovTypeCodeTres;                    
+                    mySale.LinesPag[linePayMovType].AbrevTpMovPagTes = movType;
+                    mySale.AlteraPagamAbrevTpMov(linePayMovType, movType, ref byRefFalse, ref byRefFalse, ref byRefFalse, ref byRefFalse, ref byRefFalse, ref byRefFalse, ref byRefFalse, ref byRefFalse);
+                    mySale.LinesPag[linePayMovType].Cambio = line.Exchange;
+                    mySale.LinesPag[linePayMovType].Valor = line.Value;
+                    mySale.AlteraPagamValor(linePayMovType, mySale.LinesPag[linePayMovType].Valor);
+                    mySale.LinesPag[linePayMovType].AbrevMoeda = line.CurrencyCode;
+
+                    mySale.LinesPag[linePayMovType].ValorMoedaDoc = mySale.LinesPag[linePayMovType].Valor;
+
+                    linePayMovType++;
                 }
 
                 //documento externo certeficado

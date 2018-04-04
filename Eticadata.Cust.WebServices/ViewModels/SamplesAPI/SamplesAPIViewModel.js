@@ -181,7 +181,9 @@
 
         var sample = {
             FiscalYear: "2018", SectionCode: "1", DocTypeAbbrev: "FAT", EntityCode: 1, Date: new Date(), ExpirationDate: new Date(), CurrencyCode: "EUR",
-            Lines: [{ LineNumber: 1, ItemCode: "ART1", ItemDescription: "Artigo cust vnd", Quantity: 3, VATTax: 23, UnitPriceExcludedVAT: 100, Discount1: 1, Discount2: 2, Discount3: 3, DiscountValue: 4 }], GetReportBytes: true
+            Lines: [{ LineNumber: 1, ItemCode: "ART1", ItemDescription: "Artigo cust vnd", Quantity: 3, VATTax: 23, UnitPriceExcludedVAT: 100, Discount1: 1, Discount2: 2, Discount3: 3, DiscountValue: 4 }],
+            LinesPayment: [{ PayMovTypeCodeTres: "CHQ", Value: 300, CurrencyCode: "EUR", Exchange: 1 }, {PayMovTypeCodeTres: "NUM", Value: 32.51, CurrencyCode: "EUR", Exchange: 1}],
+            GetReportBytes: true
         }
 
         $.ajax({

@@ -36,7 +36,7 @@ namespace Eticadata.Cust.WebServices.Controllers
 
                     short IRS = 0;
                     mySettlement.AlteraConfirmacao(lineSettlement.NumLinha, true, ref IRS);
-
+                                        
                     linePend.Confirmacao = 1;
 
                     var validate = mySettlement.Validate();

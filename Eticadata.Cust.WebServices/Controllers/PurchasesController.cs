@@ -30,6 +30,10 @@ namespace Eticadata.Cust.WebServices.Controllers
         //		"LineNumber": "1",
         //		"ItemCode": "AMORT",
         //		"ItemDescription": "AMORTECEDOR 001",
+        //      "BatchCode" : "LOTE_1",
+        //      "BatchDescription" : "Lote 0001".
+        //      "EntryDate" : "2018-03-27"
+        //      "ExpirationDate" : "2019-03-27"
         //		"Quantity": "2",
         //		"VATTax": "23",
         //		"UnitPriceExcludedVAT": "39.90",
@@ -83,6 +87,32 @@ namespace Eticadata.Cust.WebServices.Controllers
                     purchLine.CodArtigo = itemCode;
                     purch.AlteraArtigo(numberLine, ref itemCode, ref affectsOtherLines, ref fixedAssociation, ref freeAssociation, ref searchItem, checkStock, ref stockAvailable);
                     purchLine.DescArtigo = line.ItemDescription;
+
+                    //Cria lote caso não exista
+                    var item = Eti.Aplicacao.Tabelas.Artigos.Find(itemCode);
+                    if (item.Lotes)
+                    {
+                        var inactive = false;
+                        var exists = false;
+
+                        exists = Eti.Aplicacao.Tabelas.Artigos.ExisteLote(itemCode, line.BatchCode, ref inactive);
+
+                        if (!exists)
+                        {                            
+                            Eti.Aplicacao.Tabelas.Artigos.GravaLote(itemCode, line.BatchCode, line.BatchDescription, line.EntryDate , line.ExpirationDate, "", "", "", "", "");
+
+                            purchLine.Lote = line.BatchCode;
+
+                            checkStock = true;
+                            stockAvailable = false;
+
+                            //exists : devolve se o lote existe ou não
+                            //inactive: devolve se está inativo
+                            //se checkStock = true devolve no stockAvailable se existe stock disponivel
+                            purch.AlteraLote(numberLine, itemCode, line.BatchCode, ref exists, ref inactive, checkStock, ref stockAvailable);
+                        }
+                    }
+
 
                     purchLine.Quantidade = line.Quantity;
                     purch.AlteraQuantidade(numberLine, purchLine.Quantidade, ref affectsOtherLines, false, ref stockAvailable);
@@ -156,7 +186,7 @@ namespace Eticadata.Cust.WebServices.Controllers
                     Number = number,
                 };
 
-                byte[] reportBytes = Functions.GetReportBytes(TpDocumentoAEmitir.Compras , docKey);
+                byte[] reportBytes = Functions.GetReportBytes(TpDocumentoAEmitir.Compras, docKey);
 
                 return Ok(reportBytes);
             }

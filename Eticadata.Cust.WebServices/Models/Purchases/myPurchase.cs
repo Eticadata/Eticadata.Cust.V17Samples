@@ -21,6 +21,10 @@ namespace Eticadata.Cust.WebServices.Models
         public int LineNumber { get; set; }
         public string ItemCode { get; set; }
         public string ItemDescription { get; set; }
+        public string BatchCode { get; set; }
+        public string BatchDescription { get; set; }        
+        public string EntryDate { get; set; }
+        public string ExpirationDate { get; set; }
         public double Quantity { get; set; }
         public int VATTax { get; set; }
         public double UnitPriceExcludedVAT { get; set; }
