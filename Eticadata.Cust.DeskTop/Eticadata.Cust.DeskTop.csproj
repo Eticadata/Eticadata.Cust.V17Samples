@@ -9,12 +9,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Eticadata.Cust.DeskTop</RootNamespace>
     <AssemblyName>Eticadata.Cust.DeskTop</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,54 +37,65 @@
   <ItemGroup>
     <Reference Include="Eticadata.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Controls.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Web.00.Site\Eticadata.Web\bin\Eticadata.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Eticadata.ControlsPOS, Version=18.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.ControlsPOS.dll</HintPath>
+      <Private>False</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Eticadata.ControlsPOS.Generics, Version=18.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.ControlsPOS.Generics.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Desktop.Base, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Desktop.Base.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Desktop.Base.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.ERP, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.ERP.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.ERP.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Eticadata.EtiVersions, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
+    <Reference Include="Eticadata.EtiVersions, Version=18.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.EtiVersions.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.EtiVersions.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Generics, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Generics.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Generics.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Infrastruct, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Infrastruct.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Infrastruct.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Movs, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Movs.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Movs.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Tables, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Tables.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Tables.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Views.Reports, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Views.Reports.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Views.Reports.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Eticadata.Views.Tables.Entities, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b4fa931908a2cad3, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Libs\Desktop\Bin\Eticadata.Views.Tables.Entities.dll</HintPath>
+      <HintPath>..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin\Eticadata.Views.Tables.Entities.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\Desktop\Bin\Newtonsoft.Json.dll</HintPath>
@@ -109,6 +121,17 @@
     <Compile Include="Models\EntitiesCategory.cs" />
     <Compile Include="Models\PrintLabelInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\usrCloseCashSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\usrCloseCashSession.Designer.cs">
+      <DependentUpon>usrCloseCashSession.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\usrCustomers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +161,13 @@
     <Content Include="Libs\Desktop\Bin\Newtonsoft.Json.dll" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\usrCloseCashSession.resx">
+      <DependentUpon>usrCloseCashSession.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\usrNewWindow.resx">
       <DependentUpon>usrNewWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,8 +177,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)Eticadata.Cust.*.pdb" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
-xcopy "$(TargetDir)Eticadata.Cust.*.dll" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Desk.00.Bin\Bin" /E /Y
+    <PostBuildEvent>xcopy "$(TargetDir)Eticadata.Cust.*.pdb" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin" /E /Y
+xcopy "$(TargetDir)Eticadata.Cust.*.dll" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V18\ERP.Build\Desk.00.Bin\Bin" /E /Y
 
 :Devido ao webservice
 xcopy "$(TargetDir)Eticadata.Cust.*.dll" "$(ProjectDir)..\..\..\Edata.Cust\Projects\V17\ERP.Build\Web.00.Site\Eticadata.Web\bin" /E /Y</PostBuildEvent>

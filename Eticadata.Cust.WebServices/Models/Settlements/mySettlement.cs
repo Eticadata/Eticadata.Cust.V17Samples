@@ -5,6 +5,7 @@
         public string DocTypeAbbrev { get; set; }
         public string SectionCode { get; set; }
         public myPendingDocument PendingDocument { get; set; }
+        public double ExtraCharge { get; set; }
     }
 
     public class myPendingDocument
